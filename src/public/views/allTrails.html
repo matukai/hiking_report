@@ -17,7 +17,7 @@
           </a>
           <br />
           <a href="/all">
-            <li>All Trail</li>
+            <li>All Trails</li>
           </a>
         </ul>
       </div>
@@ -101,7 +101,7 @@
                         <div class="card-footer">
                           <div class="card-footer-item">
                             <span>
-                              {{selectedHike.length_m}} miles
+                              {{selectedHike.length_m}} mi
                             </span>
                           </div>
                           <div class="card-footer-item">
@@ -147,7 +147,7 @@
 <div class="card">
     <header class="card-header">
       <h1 class="card-header-title is-1 is-centered">Oahu Trails</h1>
-
+    </header>
 <!-- Toggle m/km buttons -->
       <div class="buttons has-addons">
           <span ng-if="onI()" class="button is-success is-selected">m</span>
@@ -162,16 +162,17 @@
           <i class="fa fa-angle-down" aria-hidden="true"></i>
         </span>
       </a> -->
-    </header>
+    
 
 <!-- Trail list -->
+      
       <div class="card-table">
         <div class="content">
           <table class="table is-fullwidth is striped">
             <tbody>
               <tr ng-repeat= "trail in trails | filter : test">
                 <td><a href="/trail/{{trail.trailname}}">{{trail.trailname}}</a></td>
-                <td ng-if="onI()"><a href="/trail/{{trail.trailname}}">{{trail.length_m}} miles</a></td>
+                <td ng-if="onI()"><a href="/trail/{{trail.trailname}}">{{trail.length_m}} mi</a></td>
                 <td ng-if="onM()"><a href="/trail/{{trail.trailname}}">{{trail.length_km}} km</a></td>
                 <td ng-if="trail.status === 'GOOD'"><a class="button is-success" href="/trail/{{trail.trailname}}">Good!</a></td>
                 <td ng-if="trail.status === 'CAUTION'"><a class="button is-warning" href="/trail/{{trail.trailname}}">Caution!</a></td>
@@ -184,8 +185,8 @@
       </div>
     </div>
 <!-- Footer -->
-    <footer class="card-footer">
-      <a href="/all/#" class="card-footer-item">Back to Top</a>
+    <footer class="cardFooter">
+      <a href="/all/#">Back to Top</a>
     </footer>
   </div>
 </div> 
